@@ -1,6 +1,6 @@
 #![no_std]
 
-use gstd::{msg, prelude::*};
+use gstd::{exec, msg, prelude::*};
 use tamagotchi_io::{Tamagotchi, TmgAction, TmgEvent};
 
 static mut STATE: Option<Tamagotchi> = None;
@@ -11,10 +11,13 @@ extern "C" fn handle() {
     let state: &Tamagotchi = unsafe { STATE.as_ref().expect("failed to get contract state") };
     match action {
         TmgAction::Name => {
-            msg::reply(TmgEvent::Name(state.name.clone()), 0).expect("Error in sending reply");
+            let name = state.name.clone();
+            msg::reply(TmgEvent::Name(name), 0).expect("Error in sending reply");
         }
         TmgAction::Age => {
-            msg::reply(TmgEvent::Age(state.date_of_birth), 0).expect("Error in sending reply");
+            let current_block_height = exec::block_height() as u64;
+            let age = current_block_height - state.date_of_birth;
+            msg::reply(TmgEvent::Age(age), 0).expect("Error in sending reply");
         }
     }
 }
@@ -22,7 +25,7 @@ extern "C" fn handle() {
 #[no_mangle]
 extern "C" fn init() {
     let name: String = msg::load().expect("Error in loading name");
-    let date_of_birth = 0u64;
+    let date_of_birth = exec::block_height() as u64;
     unsafe {
         STATE = Some(Tamagotchi {
             name,
