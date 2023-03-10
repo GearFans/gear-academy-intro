@@ -1,4 +1,5 @@
-use io::ProgramMetadata;
+use hello_world_io::ProgramMetadata;
+
 fn main() {
     gear_wasm_builder::build_with_metadata::<ProgramMetadata>();
 }

@@ -1,5 +1,5 @@
 use gtest::{Log, Program, System};
-use io::InputMessages;
+use hello_world_io::InputMessages;
 
 #[test]
 fn hello_test() {

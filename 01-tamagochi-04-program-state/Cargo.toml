@@ -9,11 +9,11 @@ path = "lib.rs"
 
 [dependencies]
 gstd = { git = "https://github.com/gear-tech/gear.git", features = ["debug"], branch = "testnet"}
-io = { path = "io" }
+hello_world_io = { path = "io" }
 
 [build-dependencies]
 gear-wasm-builder = { git = "https://github.com/gear-tech/gear.git", branch = "testnet"}
-io = { path = "io" }
+hello_world_io = { path = "io" }
 
 [dev-dependencies]
 gtest = { git = "https://github.com/gear-tech/gear.git", branch = "testnet"}

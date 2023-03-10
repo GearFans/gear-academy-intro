@@ -1,6 +1,6 @@
 #![no_std]
 use gstd::{debug, msg, prelude::*};
-use io::InputMessages;
+use hello_world_io::InputMessages;
 
 static mut GREETING: Option<String> = None;
 
@@ -30,14 +30,12 @@ extern "C" fn init() {
 
 #[no_mangle]
 extern "C" fn metahash() {
-   let metahash: [u8;32] = include!(".metahash");
-   msg::reply(metahash, 0).expect("Failed to share metahash");
+    let metahash: [u8; 32] = include!(".metahash");
+    msg::reply(metahash, 0).expect("Failed to share metahash");
 }
 
 #[no_mangle]
 extern "C" fn state() {
-   let greeting = unsafe {
-        GREETING.get_or_insert(Default::default())
-   };
-   msg::reply(greeting, 0).expect("Failed to share state");
+    let greeting = unsafe { GREETING.get_or_insert(Default::default()) };
+    msg::reply(greeting, 0).expect("Failed to share state");
 }
