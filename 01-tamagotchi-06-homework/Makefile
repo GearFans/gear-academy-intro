@@ -1,4 +1,4 @@
-PKG=tamagochi
+PKG=tamagotchi
 
 all: build fmt
 
