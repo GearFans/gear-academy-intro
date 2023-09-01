@@ -35,12 +35,6 @@ extern "C" fn init() {
 }
 
 #[no_mangle]
-extern "C" fn metahash() {
-    let metahash: [u8; 32] = include!(".metahash");
-    msg::reply(metahash, 0).expect("Failed to share metahash");
-}
-
-#[no_mangle]
 extern "C" fn state() {
     let state: &Tamagotchi = unsafe { STATE.as_ref().expect("failed to get contract state") };
     msg::reply(state, 0).expect("Failed to share state");

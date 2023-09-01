@@ -8,12 +8,19 @@ edition = "2021"
 path = "lib.rs"
 
 [dependencies]
-gstd = { git = "https://github.com/gear-tech/gear.git", branch = "testnet"}
-tamagotchi_io = { path = "io" }
+gstd.workspace = true
+tamagotchi_io.workspace = true
 
 [build-dependencies]
-gear-wasm-builder = { git = "https://github.com/gear-tech/gear.git", branch = "testnet"}
-tamagotchi_io = { path = "io" }
+gear-wasm-builder.workspace = true
+tamagotchi_io.workspace = true
 
 [dev-dependencies]
-gtest = { git = "https://github.com/gear-tech/gear.git", branch = "testnet"}
+gtest.workspace = true
+
+[workspace.dependencies]
+gstd = { git = "https://github.com/gear-tech/gear.git", rev = "946ac47"}
+gear-wasm-builder = { git = "https://github.com/gear-tech/gear.git", rev = "946ac47"}
+gmeta = {  git = "https://github.com/gear-tech/gear.git", rev = "946ac47" }
+gtest = { git = "https://github.com/gear-tech/gear.git", rev = "946ac47"}
+tamagotchi_io = { path = "io" }
