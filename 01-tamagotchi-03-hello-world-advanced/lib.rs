@@ -1,5 +1,6 @@
 #![no_std]
-use gstd::{debug, msg, prelude::*, ActorId};
+
+use gstd::{debug, msg, prelude::*, ActorId, String};
 use parity_scale_codec::{Decode, Encode};
 use scale_info::TypeInfo;
 
@@ -29,8 +30,39 @@ extern "C" fn handle() {
 
 #[no_mangle]
 extern "C" fn init() {
-    let greeting = String::from_utf8(msg::load_bytes().expect("Can't load init message"))
-        .expect("Invalid message");
+    let greeting: String = msg::load().expect("Can't load init message");
     debug!("Program was initialized with message {:?}", greeting);
     unsafe { GREETING = Some(greeting) };
+}
+
+#[cfg(test)]
+mod hello_world_test {
+    use super::InputMessages;
+    use gstd::String;
+    use gtest::{Log, Program, System};
+
+    #[test]
+    fn hello_test() {
+        let sys = System::new();
+        sys.init_logger();
+        let program = Program::current(&sys);
+        let res = program.send(2, String::from("Hello"));
+        assert!(!res.main_failed());
+
+        // test `SendHelloTo`
+        let hello_recipient: u64 = 4;
+        let res = program.send(2, InputMessages::SendHelloTo(hello_recipient.into()));
+        let expected_log = Log::builder()
+            .dest(hello_recipient)
+            .payload(String::from("Hello"));
+        assert!(res.contains(&expected_log));
+
+        // test `SendHelloReply`
+        let hello_recipient: u64 = 2;
+        let res = program.send(2, InputMessages::SendHelloReply);
+        let expected_log = Log::builder()
+            .dest(hello_recipient)
+            .payload(String::from("Hello"));
+        assert!(res.contains(&expected_log));
+    }
 }

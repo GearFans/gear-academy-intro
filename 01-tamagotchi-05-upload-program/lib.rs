@@ -1,5 +1,5 @@
 #![no_std]
-use gstd::{debug, msg, prelude::*};
+use gstd::{debug, msg, prelude::*, String};
 use hello_world_io::InputMessages;
 
 static mut GREETING: Option<String> = None;
@@ -22,20 +22,45 @@ extern "C" fn handle() {
 
 #[no_mangle]
 extern "C" fn init() {
-    let greeting = String::from_utf8(msg::load_bytes().expect("Can't load init message"))
-        .expect("Invalid message");
+    let greeting: String = msg::load().expect("Can't load init message");
     debug!("Program was initialized with message {:?}", greeting);
     unsafe { GREETING = Some(greeting) };
-}
-
-#[no_mangle]
-extern "C" fn metahash() {
-    let metahash: [u8; 32] = include!(".metahash");
-    msg::reply(metahash, 0).expect("Failed to share metahash");
 }
 
 #[no_mangle]
 extern "C" fn state() {
     let greeting = unsafe { GREETING.get_or_insert(Default::default()) };
     msg::reply(greeting, 0).expect("Failed to share state");
+}
+
+#[cfg(test)]
+mod hello_world_test {
+    use super::InputMessages;
+    use gstd::String;
+    use gtest::{Log, Program, System};
+
+    #[test]
+    fn hello_test() {
+        let sys = System::new();
+        sys.init_logger();
+        let program = Program::current(&sys);
+        let res = program.send(2, String::from("Hello"));
+        assert!(!res.main_failed());
+
+        // test `SendHelloTo`
+        let hello_recipient: u64 = 4;
+        let res = program.send(2, InputMessages::SendHelloTo(hello_recipient.into()));
+        let expected_log = Log::builder()
+            .dest(hello_recipient)
+            .payload(String::from("Hello"));
+        assert!(res.contains(&expected_log));
+
+        // test `SendHelloReply`
+        let hello_recipient: u64 = 2;
+        let res = program.send(2, InputMessages::SendHelloReply);
+        let expected_log = Log::builder()
+            .dest(hello_recipient)
+            .payload(String::from("Hello"));
+        assert!(res.contains(&expected_log));
+    }
 }
