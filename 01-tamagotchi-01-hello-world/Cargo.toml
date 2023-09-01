@@ -8,10 +8,10 @@ edition = "2021"
 path = "lib.rs"
 
 [dependencies]
-gstd = { git = "https://github.com/gear-tech/gear.git", features = ["debug"], branch = "testnet"}
+gstd = { git = "https://github.com/gear-tech/gear.git", features = ["debug"], rev = "946ac47"}
 
 [build-dependencies]
-gear-wasm-builder = { git = "https://github.com/gear-tech/gear.git", branch = "testnet"}
+gear-wasm-builder = { git = "https://github.com/gear-tech/gear.git", rev = "946ac47"}
 
 [dev-dependencies]
-gtest = { git = "https://github.com/gear-tech/gear.git", branch = "testnet"}
+gtest = { git = "https://github.com/gear-tech/gear.git", rev = "946ac47"}
