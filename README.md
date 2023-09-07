@@ -59,9 +59,10 @@ Actor 模型
 - entrypoints
   - init
   - handle
-- state
-  - `static mut STATE: Option<AppState> = None;`
-- metadata
+- [Metadata & state](https://academy.gear.rs/hello-world-metadata/metadata-and-state/)
+  - state
+    - `static mut STATE: Option<AppState> = None;`
+  - metadata
 
 [Gear IDEA](https://idea.gear-tech.io/programs) 部署/交互
 - [Upload smart contracts](https://wiki.gear-tech.io/docs/developing-contracts/deploy)
