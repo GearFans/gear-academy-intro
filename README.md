@@ -1,8 +1,14 @@
 # gear-academy-intro
 
+<p align="center">
+  <a href="https://gitpod.io/new/#https://github.com/gearfans/gear-academy-intro">
+    <img src="https://gitpod.io/button/open-in-gitpod.svg" width="240" alt="GEAR">
+  </a>
+</p>
+
 [Gear Academy](https://academy.gear.rs) 课程导学
 
-# 1️⃣. 基础知识
+## 1️⃣. 基础知识
 
 本地开发环境搭建: 
 - [Getting started](https://academy.gear.rs/getting-started/getting-started)
