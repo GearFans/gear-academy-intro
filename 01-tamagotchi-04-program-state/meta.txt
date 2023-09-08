@@ -1,1 +1,1 @@
-hello_world.meta.txt
+./target/wasm32-unknown-unknown/debug/hello_world.meta.txt
