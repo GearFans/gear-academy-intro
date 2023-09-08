@@ -77,3 +77,47 @@ Actor 模型
 
 作业: 部署 Tamagotchi 合约
 - https://academy.gear.rs/hello-world-upload/homework
+- 参考答案
+  - [01-tamagotchi-06-homework](01-tamagotchi-06-homework)
+
+# 2️⃣. gstd 合约标准库与基本开发案例
+
+标准库 api:
+- [gstd](https://docs.gear.rs/gstd/index.html)
+  - [ActorId](https://docs.gear.rs/gstd/struct.ActorId.html)
+  - [MessageId](https://docs.gear.rs/gstd/struct.MessageId.html)
+  - [prelude](https://docs.gear.rs/gstd/prelude/index.html)
+    - [String](https://docs.gear.rs/gstd/prelude/struct.String.html)
+    - [Vec](https://docs.gear.rs/gstd/prelude/struct.Vec.html)
+    - [collections](https://docs.gear.rs/gstd/prelude/collections/index.html)
+      - [HashMap](https://docs.gear.rs/gstd/prelude/collections/struct.HashMap.html)
+      - [LinkedList](https://docs.gear.rs/gstd/prelude/collections/struct.LinkedList.html)
+  - [msg](https://docs.gear.rs/gstd/msg/index.html)
+    - [load](https://docs.gear.rs/gstd/msg/fn.load.html)
+    - [value](https://docs.gear.rs/gstd/msg/fn.value.html)
+    - [source](https://docs.gear.rs/gstd/msg/fn.source.html)
+    - [send](https://docs.gear.rs/gstd/msg/fn.send.html)
+    - [reply](https://docs.gear.rs/gstd/msg/fn.reply.html)
+  - [exec](https://docs.gear.rs/gstd/exec/index.html)
+    - [block_height](https://docs.gear.rs/gstd/exec/fn.block_height.html)
+    - [block_timestamp](https://docs.gear.rs/gstd/exec/fn.block_timestamp.html)
+    - [program_id](https://docs.gear.rs/gstd/exec/fn.program_id.html)
+- [gmeta](https://docs.gear.rs/gmeta/)
+  - [Metadata](https://docs.gear.rs/gmeta/trait.Metadata.html)
+  - [InOut](https://docs.gear.rs/gmeta/type.InOut.html)
+- [gtest](https://docs.gear.rs/gtest/index.html)
+  - [System](https://docs.gear.rs/gtest/struct.System.html)
+  - [Program](https://docs.gear.rs/gtest/struct.Program.html)
+  - [Log](https://docs.gear.rs/gtest/struct.Log.html)
+
+案例
+- Escrow
+  - https://github.com/gear-foundation/dapps-escrow
+  - https://wiki.gear-tech.io/docs/examples/escrow
+- Fungible Token
+  - https://github.com/gear-foundation/dapps-fungible-token
+- Non Fungible Token
+  - https://github.com/gear-foundation/dapps-non-fungible-token
+
+作业: Tamagotchi Interaction
+- https://academy.gear.rs/escrow-testing/homework
