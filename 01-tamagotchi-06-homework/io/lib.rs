@@ -1,19 +1,16 @@
 #![no_std]
 
-use codec::{Decode, Encode};
 use gmeta::{InOut, Out, Metadata};
 use gstd::prelude::*;
-use scale_info::TypeInfo;
-
 pub struct ProgramMetadata;
 
 impl Metadata for ProgramMetadata {
-    type Init = InOut<String, ()>;
-    type Reply = InOut<(), ()>;
-    type Others = InOut<(), ()>;
+    type Init = InOut<String, ()>; // In<String>
+    type Reply = InOut<(), ()>; // ()
+    type Others = InOut<(), ()>; // ()
     type Signal = ();
     type Handle = InOut<TmgAction, TmgEvent>;
-    type State = Out<Tamagotchi>;
+    type State = Out<Tamagotchi>; // InOut<(), Tamagotchi>
 }
 
 #[derive(Encode, Decode, TypeInfo)]

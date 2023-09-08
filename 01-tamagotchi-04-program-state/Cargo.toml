@@ -24,3 +24,5 @@ gear-wasm-builder = { git = "https://github.com/gear-tech/gear.git", rev = "v0.3
 gmeta = {  git = "https://github.com/gear-tech/gear.git", rev = "v0.3.2" }
 gtest = { git = "https://github.com/gear-tech/gear.git", rev = "v0.3.2"}
 hello_world_io = { path = "io" }
+parity-scale-codec = { version = "3", default-features = false }
+scale-info = { version = "2", default-features = false }

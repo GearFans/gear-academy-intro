@@ -1,9 +1,7 @@
 #![no_std]
 
-use codec::{Decode, Encode};
 use gmeta::{In, Out, InOut, Metadata};
 use gstd::{prelude::*, ActorId, String};
-use scale_info::TypeInfo;
 pub struct ProgramMetadata;
 
 impl Metadata for ProgramMetadata {

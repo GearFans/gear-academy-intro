@@ -1,8 +1,6 @@
 #![no_std]
 
 use gstd::{debug, msg, prelude::*, ActorId, String};
-use parity_scale_codec::{Decode, Encode};
-use scale_info::TypeInfo;
 
 static mut GREETING: Option<String> = None;
 

@@ -11,5 +11,5 @@ path = "lib.rs"
 [dependencies]
 gmeta.workspace = true
 gstd.workspace = true
-parity-scale-codec = { version = "3", default-features = false }
-scale-info = { version = "2", default-features = false }
+parity-scale-codec.workspace = true
+scale-info.workspace = true
