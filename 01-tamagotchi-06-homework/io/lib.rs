@@ -1,7 +1,7 @@
 #![no_std]
 
 use codec::{Decode, Encode};
-use gmeta::{InOut, Metadata};
+use gmeta::{InOut, Out, Metadata};
 use gstd::prelude::*;
 use scale_info::TypeInfo;
 
@@ -13,7 +13,7 @@ impl Metadata for ProgramMetadata {
     type Others = InOut<(), ()>;
     type Signal = ();
     type Handle = InOut<TmgAction, TmgEvent>;
-    type State = Tamagotchi;
+    type State = Out<Tamagotchi>;
 }
 
 #[derive(Encode, Decode, TypeInfo)]

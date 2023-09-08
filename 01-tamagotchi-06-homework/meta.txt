@@ -1,1 +1,1 @@
-tamagotchi.meta.txt
+./target/wasm32-unknown-unknown/debug/tamagotchi.meta.txt

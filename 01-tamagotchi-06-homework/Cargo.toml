@@ -19,8 +19,8 @@ tamagotchi_io.workspace = true
 gtest.workspace = true
 
 [workspace.dependencies]
-gstd = { git = "https://github.com/gear-tech/gear.git", rev = "946ac47"}
-gear-wasm-builder = { git = "https://github.com/gear-tech/gear.git", rev = "946ac47"}
-gmeta = {  git = "https://github.com/gear-tech/gear.git", rev = "946ac47" }
-gtest = { git = "https://github.com/gear-tech/gear.git", rev = "946ac47"}
+gstd = { git = "https://github.com/gear-tech/gear.git", rev = "v0.3.2"}
+gear-wasm-builder = { git = "https://github.com/gear-tech/gear.git", rev = "v0.3.2"}
+gmeta = {  git = "https://github.com/gear-tech/gear.git", rev = "v0.3.2" }
+gtest = { git = "https://github.com/gear-tech/gear.git", rev = "v0.3.2"}
 tamagotchi_io = { path = "io" }
