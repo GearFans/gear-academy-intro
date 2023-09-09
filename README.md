@@ -152,5 +152,8 @@ Keyring
 Mailbox
 - https://wiki.gear-tech.io/docs/api/mailbox
 
-More examples:
+More examples
 - https://github.com/gear-tech/gear-js/tree/main/api
+
+前端项目模板
+- https://github.com/gear-foundation/dapps-react-app
