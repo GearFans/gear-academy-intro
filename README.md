@@ -121,3 +121,36 @@ Actor 模型
 
 作业: Tamagotchi Interaction
 - https://academy.gear.rs/escrow-testing/homework
+
+# 3️⃣. 使用 `@gear-js/api` 与合约交互
+
+`GearApi`
+- https://wiki.gear-tech.io/docs/api/getting-started
+- https://polkadot.js.org/docs/api/start
+- https://github.com/gear-tech/gear-js/tree/main/api#getting-started
+
+Keyring
+- https://github.com/gear-tech/gear-js/tree/main/api#keyring
+
+部署合约
+- https://wiki.gear-tech.io/docs/api/submit-code
+- https://wiki.gear-tech.io/docs/api/upload-program
+
+读取合约状态
+- https://wiki.gear-tech.io/docs/api/read-state
+
+发送消息
+- 发送附带金额的消息
+- https://wiki.gear-tech.io/docs/api/send-message
+
+消息的生命周期
+- https://wiki.gear-tech.io/docs/gear/technology/state-transition/#messages-blocks-and-events-lifecycle
+
+订阅事件
+- https://wiki.gear-tech.io/docs/api/events
+
+Mailbox
+- https://wiki.gear-tech.io/docs/api/mailbox
+
+More examples:
+- https://github.com/gear-tech/gear-js/tree/main/api
