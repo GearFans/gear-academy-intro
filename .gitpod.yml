@@ -9,6 +9,10 @@ tasks:
       sudo wget -c https://github.com/WebAssembly/binaryen/releases/download/version_105/binaryen-version_105-x86_64-linux.tar.gz -O - | sudo tar -xz -C /tmp/
       sudo cp /tmp/binaryen-version_105/bin/wasm-opt /usr/bin/
       curl -sL https://get.gear.rs/gear-v0.3.2-x86_64-unknown-linux-gnu.tar.xz | sudo tar -xvJC /usr/bin/
+      curl -fsSL https://deno.land/x/install/install.sh | sh
+      sudo cp $HOME/.deno/bin/deno /bin/deno
+      curl -fsSL https://bun.sh/install | bash
+      sudo cp $HOME/.bun/bin/bun /bin/bun
     init: |
       gp open README.md
       clear && printf '\e[3J' && history -c
