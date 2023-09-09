@@ -10,7 +10,7 @@ expand:
 	cargo expand > dist/lib.expanded.rs
 
 deploy: build
-	deno run -A --unsafely-ignore-certificate-errors script/deploy.ts
+	deno run -A https://gear.deno.dev/deploy.ts
 
 build:
 	mkdir -p dist
