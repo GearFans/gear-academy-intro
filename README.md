@@ -162,18 +162,25 @@ More examples
 
 合约工厂
 - https://wiki.gear-tech.io/docs/developing-contracts/create
+- [gstd::prog::ProgramGenerator](https://docs.gear.rs/gstd/prog/struct.ProgramGenerator.html)
+- [dex factory](https://github.com/gear-foundation/dapps-dex/blob/698ecfaf7acb1894a60f2d8ac58e9ce400f005f1/factory/src/contract.rs#L65)
 
 异步消息
 - https://wiki.gear-tech.io/docs/developing-contracts/interactions-between-programs
+- [send_for_reply_as](https://docs.gear.rs/gstd/msg/fn.send_for_reply_as.html)
 
 延迟消息
 - https://wiki.gear-tech.io/docs/developing-contracts/delayed-messages
+- [gstd::msg::send_delayed](https://docs.gear.rs/gstd/msg/fn.send_delayed.html)
 
 燃气券 (Gas Voucher)
 - https://wiki.gear-tech.io/docs/api/vouchers
+- [api.voucher.issue](https://github.com/gear-tech/gear-js/tree/main/api#issue-a-voucher)
 
 Gas 预留
 - https://wiki.gear-tech.io/docs/developing-contracts/gas-reservation
+- [gstd::msg::send_from_reservation](https://docs.gear.rs/gstd/msg/fn.send_from_reservation.html)
 
 系统信号
 - https://wiki.gear-tech.io/docs/developing-contracts/system-signals
+- https://academy.gear.rs/auction-signals/system-signals
