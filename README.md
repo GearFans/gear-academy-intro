@@ -157,3 +157,23 @@ More examples
 
 前端项目模板
 - https://github.com/gear-foundation/dapps-react-app
+
+# 4️⃣. 高级特性一览
+
+合约工厂
+- https://wiki.gear-tech.io/docs/developing-contracts/create
+
+异步消息
+- https://wiki.gear-tech.io/docs/developing-contracts/interactions-between-programs
+
+延迟消息
+- https://wiki.gear-tech.io/docs/developing-contracts/delayed-messages
+
+燃气券 (Gas Voucher)
+- https://wiki.gear-tech.io/docs/api/vouchers
+
+Gas 预留
+- https://wiki.gear-tech.io/docs/developing-contracts/gas-reservation
+
+系统信号
+- https://wiki.gear-tech.io/docs/developing-contracts/system-signals
