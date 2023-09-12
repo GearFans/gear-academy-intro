@@ -29,9 +29,9 @@ extern "C" fn init() {
 
 #[no_mangle]
 extern "C" fn state() {
-    let query: String = msg::load().expect("Can't load state query");
+    let query: Query = msg::load().expect("Can't load state query");
     debug!("Program was queried with {:?}", query);
-    let greeting : String = unsafe { GREETING.get_or_insert(Default::default()) }.clone();
+    let greeting: String = unsafe { GREETING.clone().unwrap_or(String::from("")) };
     msg::reply(greeting, 0).expect("Failed to share state");
 }
 
