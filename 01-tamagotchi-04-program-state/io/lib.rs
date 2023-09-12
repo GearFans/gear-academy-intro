@@ -10,7 +10,7 @@ impl Metadata for ProgramMetadata {
     type Reply = ();
     type Others = ();
     type Signal = ();
-    type State = Out<String>;
+    type State = InOut<String, String>;
 }
 
 #[derive(Encode, Decode, TypeInfo)]

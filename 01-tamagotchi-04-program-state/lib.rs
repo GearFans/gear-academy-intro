@@ -1,6 +1,6 @@
 #![no_std]
 use gstd::{debug, msg, prelude::*, String};
-use hello_world_io::InputMessages;
+use hello_world_io::*;
 
 static mut GREETING: Option<String> = None;
 
@@ -29,7 +29,9 @@ extern "C" fn init() {
 
 #[no_mangle]
 extern "C" fn state() {
-    let greeting = unsafe { GREETING.get_or_insert(Default::default()) };
+    let query: String = msg::load().expect("Can't load state query");
+    debug!("Program was queried with {:?}", query);
+    let greeting : String = unsafe { GREETING.get_or_insert(Default::default()) }.clone();
     msg::reply(greeting, 0).expect("Failed to share state");
 }
 
